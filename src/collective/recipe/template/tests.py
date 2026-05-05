@@ -22,11 +22,6 @@ checker = renormalizing.RENormalizing([
     (re.compile(r'-\S+-py\d[.]\d(-\S+)?.egg'),
      '-pyN.N.egg',
      ),
-    (re.compile(
-        r'^.*UserWarning: pkg_resources is deprecated.*\n'
-        r'\s+from pkg_resources import.*\n',
-        re.MULTILINE),
-     ''),
 ])
 
 
