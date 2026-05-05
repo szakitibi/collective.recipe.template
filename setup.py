@@ -1,4 +1,4 @@
-import os
+from pathlib import Path
 
 from setuptools import find_namespace_packages
 from setuptools import setup
@@ -10,13 +10,11 @@ setup(
     name='collective.recipe.template',
     version=version,
     description="Buildout recipe to generate a text file from a template",
-    long_description=(
-        open("README.rst", "rb").read().decode("utf-8")
-        + "\n\n"
-        + open(os.path.join("src", "collective", "recipe", "template",
-                            "README.rst"), "rb").read().decode("utf-8")
-        + "\n\n"
-        + open("CHANGES.rst", "rb").read().decode("utf-8")
+    long_description='\n'.join(
+        Path(f).read_text(encoding='utf-8')
+        for f in ('README.rst',
+                  'src/collective/recipe/template/README.rst',
+                  'CHANGES.rst')
     ),
     classifiers=[
         "Framework :: Buildout",
