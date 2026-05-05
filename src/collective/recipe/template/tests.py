@@ -1,12 +1,11 @@
 """Test setup for collective.recipe.template.
 """
 
+import doctest
 import re
+import unittest
 
 import zc.buildout.testing
-
-import doctest
-import unittest
 from zope.testing import renormalizing
 
 
@@ -23,6 +22,11 @@ checker = renormalizing.RENormalizing([
     (re.compile(r'-\S+-py\d[.]\d(-\S+)?.egg'),
      '-pyN.N.egg',
      ),
+    (re.compile(
+        r'^.*UserWarning: pkg_resources is deprecated.*\n'
+        r'\s+from pkg_resources import.*\n',
+        re.MULTILINE),
+     ''),
 ])
 
 

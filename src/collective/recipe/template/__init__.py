@@ -119,7 +119,7 @@ class Recipe:
         try:
             with open(self.output, "rb") as f:
                 output = f.read()
-        except IOError:
+        except OSError:
             result_changed = True
         else:
             result_changed = output != self.result.encode(self.output_encoding)
