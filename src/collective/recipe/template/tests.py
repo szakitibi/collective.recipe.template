@@ -14,7 +14,6 @@ def setUp(test):
     zc.buildout.testing.buildoutSetUp(test)
     zc.buildout.testing.install_develop('collective.recipe.template', test)
     zc.buildout.testing.install('zope.testing', test)
-    zc.buildout.testing.install('six', test)
     zc.buildout.testing.install('Genshi', test)
 
 

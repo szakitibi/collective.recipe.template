@@ -4,7 +4,7 @@ Changelog
 2.3 (unreleased)
 ================
 
-- Nothing changed yet.
+- Drop support for Python 2 and Python 3 versions older than 3.10.
 
 
 2.2 (2021-12-01)
